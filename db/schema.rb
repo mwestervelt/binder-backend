@@ -10,27 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_27_030607) do
+ActiveRecord::Schema.define(version: 2019_02_27_220641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "books", force: :cascade do |t|
     t.string "title"
-    t.integer "pageCount"
-    t.date "publishedDate"
+    t.string "author"
+    t.string "description"
+    t.string "image"
+    t.string "page_count"
+    t.string "published"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "shelves", force: :cascade do |t|
-    t.integer "shelf_type"
+  create_table "user_books", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "book_id"
+    t.string "shelf_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["book_id"], name: "index_shelves_on_book_id"
-    t.index ["user_id"], name: "index_shelves_on_user_id"
+    t.index ["book_id"], name: "index_user_books_on_book_id"
+    t.index ["user_id"], name: "index_user_books_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -43,6 +46,6 @@ ActiveRecord::Schema.define(version: 2019_02_27_030607) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "shelves", "books"
-  add_foreign_key "shelves", "users"
+  add_foreign_key "user_books", "books"
+  add_foreign_key "user_books", "users"
 end

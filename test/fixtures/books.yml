@@ -2,10 +2,16 @@
 
 one:
   title: MyString
-  page_count: 1
-  published: 2019-02-22
+  author: MyString
+  description: MyString
+  image: MyString
+  page_count: MyString
+  published: MyString
 
 two:
   title: MyString
-  page_count: 1
-  published: 2019-02-22
+  author: MyString
+  description: MyString
+  image: MyString
+  page_count: MyString
+  published: MyString
