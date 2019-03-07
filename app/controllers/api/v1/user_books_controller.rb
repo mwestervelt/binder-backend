@@ -24,7 +24,7 @@ class Api::V1::UserBooksController < ApplicationController
   # PATCH/PUT /user_books/1
   def update
     if @user_book.update(user_book_params)
-      render json: @user_book
+      render json: {user_book: @user_book}
     else
       render json: @user_book.errors, status: :unprocessable_entity
     end

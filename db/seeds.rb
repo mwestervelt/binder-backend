@@ -20,10 +20,10 @@ twilight = Book.create(title: "Twilight", author:"stephanie meyer", description:
 crucible = Book.create(title: "The crucible", author:"arthur miller", description: "asdf", image: "google.com", page_count: 200, published: "1800-12-12")
 
 ericpotter = UserBook.create(user: eric, book: harrypotter, shelf_type: "read")
-ericgot = UserBook.create(user: eric, book: gameofthrones, shelf_type: "currently reading")
-erictwilight = UserBook.create(user: eric, book: twilight, shelf_type: "want to read")
+ericgot = UserBook.create(user: eric, book: gameofthrones, shelf_type: "currentlyReading")
+erictwilight = UserBook.create(user: eric, book: twilight, shelf_type: "wantToRead")
 
-
+review1 = Review.create(content: "Meh I've read better, not very entertaining...", rating: 1, title: "My Dank Review", user: eric, book: gameofthrones)
 
 
 p "i have been seeded"

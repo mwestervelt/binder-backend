@@ -11,13 +11,13 @@ class UserSerializer < ActiveModel::Serializer
 
     attribute :currently_reading do
       object.user_books.select do |user_book|
-        user_book.shelf_type == "currently reading"
+        user_book.shelf_type == "currentlyReading"
       end
     end
 
     attribute :want_to_read do
       object.user_books.select do |user_book|
-        user_book.shelf_type == "want to read"
+        user_book.shelf_type == "wantToRead"
       end
     end
   end
